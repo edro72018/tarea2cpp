@@ -62,7 +62,7 @@ int main() {
         
         if (opcion == 1) {
             clear();
-            float cal1, cal2, cal3;
+            int cal1, cal2, cal3;
             cout << "Ingresa tres calificaciones: " << endl << "Ingresa la primera calificación: ";
             cin >> cal1;
             while(cal1 > 10 || cal1 < 0){

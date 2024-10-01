@@ -91,8 +91,9 @@ int main() {
             cin >> num1 >> num2 >> num3;
             cout << "El mayor número es: " << calcularMayor(num1, num2, num3) << endl << "-----------------------------------------" << endl;
         } else {
-            cout << "Opción no válida. Inténtalo de nuevo." << endl;
 clear();
+            cout << "Opción no válida. Inténtalo de nuevo." << endl;
+
         }
     }
     

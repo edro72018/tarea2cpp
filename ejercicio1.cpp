@@ -4,18 +4,17 @@ using namespace std;
 void clear() {
     // Secuencia ANSI para limpiar la pantalla y mover el cursor a la posición 0,0
     cout << "\033[2J\033[1;1H";
+    //clear();
 }
 
-int main() {
-    setlocale(LC_ALL, "es_ES.UTF-8");
-    //clear();
+
 // Función para calcular el promedio de tres calificaciones
-float CalcularPromedio(int cal1, int cal2, int cal3) {
+float calcularPromedio(float cal1, float cal2, float cal3) {
     return (cal1 + cal2 + cal3) / 3.0;
 }
 
 // Función para encontrar el mayor de tres números e indicar si hay igualdad
-int CalcularMayor(int num1, int num2, int num3) {
+int calcularMayor(int num1, int num2, int num3) {
     if (num1 == num2 && num2 == num3) {
         cout << "Los tres números son iguales." << endl;
         return num1;
@@ -37,7 +36,7 @@ int CalcularMayor(int num1, int num2, int num3) {
 }
 
 // Función que muestra el menú y retorna la opción seleccionada
-int Menu() {
+int menu() {
     int opcion;
     cout << "\nMenú de opciones:" << endl;
     cout << "1. Calcular el promedio de tres calificaciones." << endl;
@@ -49,24 +48,25 @@ int Menu() {
 }
 
 int main() {
+    setlocale(LC_ALL, "es_ES.UTF-8"); 
     int opcion;
     while (true) {
-        opcion = Menu();
+        opcion = menu();
         if (opcion == 3) {
             cout << "Saliendo..." << endl;
             break;
         }
         
         if (opcion == 1) {
-            int cal1, cal2, cal3;
+            float cal1, cal2, cal3;
             cout << "Ingresa tres calificaciones: ";
             cin >> cal1 >> cal2 >> cal3;
-            cout << "El promedio es: " << CalcularPromedio(cal1, cal2, cal3) << endl;
+            cout << "El promedio es: " << calcularPromedio(cal1, cal2, cal3) << endl;
         } else if (opcion == 2) {
             int num1, num2, num3;
             cout << "Ingresa tres números: ";
             cin >> num1 >> num2 >> num3;
-            cout << "El mayor número es: " << CalcularMayor(num1, num2, num3) << endl;
+            cout << "El mayor número es: " << calcularMayor(num1, num2, num3) << endl;
         } else {
             cout << "Opción no válida. Inténtalo de nuevo." << endl;
         }

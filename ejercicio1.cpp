@@ -5,15 +5,10 @@ void clear() {
     // Secuencia ANSI para limpiar la pantalla y mover el cursor a la posición 0,0
     cout << "\033[2J\033[1;1H";
 }
+
 int main() {
     setlocale(LC_ALL, "es_ES.UTF-8");
     //clear();
-    return 0;
-}
-
-#include <iostream>
-using namespace std;
-
 // Función para calcular el promedio de tres calificaciones
 float CalcularPromedio(int cal1, int cal2, int cal3) {
     return (cal1 + cal2 + cal3) / 3.0;

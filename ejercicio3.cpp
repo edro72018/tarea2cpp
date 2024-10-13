@@ -3,6 +3,13 @@
 #include <iomanip>
 #include <limits>
 using namespace std;
+
+void clear() {
+    // Secuencia ANSI para limpiar la pantalla y mover el cursor a la posición 0,0
+    cout << "\033[2J\033[1;1H";
+    //clear();
+}
+ 
 const int N = 3; // Tamaño de la matriz
 int main() {
     int matriz[N][N];

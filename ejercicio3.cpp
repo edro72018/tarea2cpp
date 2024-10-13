@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip> // Para manejar la salida con formato
 #include <limits> // Para obtener valores máximos y mínimos
+#include <locale>
 using namespace std;
 
 void clear(){
@@ -36,6 +37,7 @@ int main() {
             cin >> matriz[i][j];
         }
     }
+    clear();
 
     // Variables para almacenar las sumas de filas, columnas y diagonales
     int sumaFila[N] = {0}, sumaColumna[N] = {0};

@@ -1,7 +1,15 @@
 #include <iostream>
 #include <iomanip> // Para manejar la salida con formato
 #include <limits> // Para obtener valores máximos y mínimos
+
 using namespace std;
+
+void clear() {
+    // Secuencia ANSI para limpiar la pantalla y mover el cursor a la posición 0,0
+    cout << "\033[2J\033[1;1H";
+    //clear();
+}
+ 
 
 const int N = 3; // Tamaño de la matriz
 

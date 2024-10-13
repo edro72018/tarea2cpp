@@ -1,23 +1,38 @@
 #include <iostream>
-#include <locale>
-#include <iomanip>
-#include <limits>
+#include <iomanip> // Para manejar la salida con formato
+#include <limits> // Para obtener valores máximos y mínimos
 using namespace std;
 
-void clear() {
-    // Secuencia ANSI para limpiar la pantalla y mover el cursor a la posición 0,0
-    cout << "\033[2J\033[1;1H";
-    //clear();
+void clear(){
+cout << "\033[2J\033[1;1H";
 }
- 
+
 const int N = 3; // Tamaño de la matriz
+
 int main() {
-    int matriz[N][N];
-    // Solicitar al usuario los valores de la matriz
+    int matriz[N][N] = {0}; // Inicializar la matriz en 0
+    
+    // Solicitar al usuario los valores de la matriz, mostrándolos en formato tipo Excel
     cout << "Ingrese los valores para la matriz 3x3:" << endl;
+    
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < N; ++j) {
-            cout << "Elemento [" << i + 1 << "][" << j + 1 << "]: ";
+            // Mostrar la matriz actualizada mientras se llenan los valores
+            cout << "\nMatriz actual:" << endl;
+            for (int x = 0; x < N; ++x) {
+                for (int y = 0; y < N; ++y) {
+                    // Mostrar los valores actuales de la matriz
+                    if (x == i && y == j) {
+                        cout << setw(5) << " ? "; // Mostrar "?" en la posición actual que se está llenando
+                    } else {
+                        cout << setw(5) << matriz[x][y]; // Mostrar los valores ya ingresados
+                    }
+                }
+                cout << endl;
+            }
+
+            // Solicitar el valor para la posición actual
+            cout << "\nElemento [" << i + 1 << "][" << j + 1 << "]: ";
             cin >> matriz[i][j];
         }
     }

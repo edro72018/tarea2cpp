@@ -1,13 +1,11 @@
 #include <iostream>
-#include <iomanip> // Para manejar la salida con formato
-#include <limits> // Para obtener valores máximos y mínimos
+#include <locale>
+#include <iomanip>
+#include <limits>
 using namespace std;
-
 const int N = 3; // Tamaño de la matriz
-
 int main() {
     int matriz[N][N];
-    
     // Solicitar al usuario los valores de la matriz
     cout << "Ingrese los valores para la matriz 3x3:" << endl;
     for (int i = 0; i < N; ++i) {
